@@ -4,11 +4,32 @@
  * 1.Отличие сортировок sort(), asort(), ksort()
 */
 $capitals = array("US" => "Washington", "UK" => "London", "Austria" => "Venna");
+foreach ($capitals as $item) {
+
+    echo $item;
+    echo " ";
+}
+echo "\r";
+
 asort($capitals);
 // $capitals = {“UK” => “London”, “Austria” => “Vienna”, “US” => “Washington”}
+foreach ($capitals as $item) {
+
+    echo $item;
+    echo " ";
+}
+echo "\r";
 
 ksort($capitals);
 // $capitals = {“Austria” => “Vienna”, “UK” => “London”, “US” => “Washington”}
+foreach ($capitals as $item) {
+
+    echo $item;
+    echo " ";
+}
+echo "\r";
+echo "***\r";
+echo "\r";
 
 /*
  * 2.Динамические переменные
@@ -16,6 +37,12 @@ ksort($capitals);
 
 $var = "first";
 $$var = "second";
+echo $var;
+echo " ";
+echo $$var;
+echo "\r";
+echo "***\r";
+echo "\r";
 
 //  $$var == $first == “Second”
 class Warrior
@@ -53,18 +80,26 @@ while (true) {
     }
 }
 
+echo "\r";
+echo "***\r";
+echo "\r";
 /*
  * 3.Какими способами можно перенаправить страницу в PHP?
  */
 
 //1. Используя функцию PHP header()
-header('Location: ' . $url);
+header('Location: ' . "");
 
 //2. Используя JavaScript
 echo '<script type="text/javascript">';
-echo 'window.location.href=' . $url . '";"';
+echo "\r";
+echo 'window.location.href=' . "" . '";"';
+echo "\r";
 echo '</script>>';
 
+echo "\r";
+echo "***\r";
+echo "\r";
 /*
  * 4. Назови и опиши пять любых типов ошибок PHP.
  *
@@ -185,6 +220,9 @@ class MyClass
 }
 
 $myObject = new MyClass();
+echo "\r";
+echo "***\r";
+echo "\r";
 
 
 /*
@@ -267,11 +305,69 @@ for ($i = 0; $i < count($arr); $i++) {
     array_unshift($reversed, $arr[$i]);
 }
 
-for ($i= 0; $i < count($reversed); $i++){
+for ($i = 0; $i < count($reversed); $i++) {
     echo $reversed[$i];
 }
+echo "\r";
+echo "***\r";
+echo "\r";
 
 
+/*
+ * 22. Как перевернуть строку?
+ */
 
+$str = "Turn me baby";
+for ($i = strlen($str) - 1; $i >= 0; $i--) {
+    $rev = array($str[$i]);
+    $revstr = implode("", $rev);
+    echo $revstr;
+}
+echo "\r\n";
+echo "\r\n";
+echo "\r\n";
+
+//If it too easy - go like this
+$str2 = "Turn me again!";
+
+function myrev($src)
+{
+    $lenght = strlen($src);
+    for ($i = 0; $i < $lenght / 2; $i++) {
+        $a = $src[$i];
+        $src[$i] = $src[$lenght - $i - 1];
+        $src[$lenght - $i - 1] = $a;
+    }
+    return $src;
+}
+echo myrev($str2);
+echo "\r\n";
+echo "\r\n";
+echo "\r\n";
+
+$str3 = "Turn me please third time in a row";
+$b = '';
+for ($i = strlen($str3) - 1; $i >=0; $i--){
+    $b .= $str3[$i];
+}
+$str3 = $b;
+echo $str3;
+echo "\r\n";
+echo "\r\n";
+echo "***\r\n";
+
+
+/*
+ * 23. Что такое рекурсия?
+ * Рекурсия – это вызов функции из неё же самой, непосредственно (простая рекурсия) или через
+ * другие функции (сложная или косвенная рекурсия), например, функция A вызывает функцию B,
+ * а функция B – функцию A. Количество вложенных вызовов функции или процедуры называется
+ * глубиной рекурсии
+ */
+
+
+/*
+ *
+ */
 ?>
 
