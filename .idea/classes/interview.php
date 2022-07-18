@@ -340,6 +340,7 @@ function myrev($src)
     }
     return $src;
 }
+
 echo myrev($str2);
 echo "\r\n";
 echo "\r\n";
@@ -347,7 +348,7 @@ echo "\r\n";
 
 $str3 = "Turn me please third time in a row";
 $b = '';
-for ($i = strlen($str3) - 1; $i >=0; $i--){
+for ($i = strlen($str3) - 1; $i >= 0; $i--) {
     $b .= $str3[$i];
 }
 $str3 = $b;
@@ -367,7 +368,68 @@ echo "***\r\n";
 
 
 /*
- *
+ *24. Напиши пример рекурсивной функции, которая вычисляет факториал
+ * числа.
  */
+
+function factorial($x)
+{
+    if ($x === 0) {
+        return 1;
+    } else {
+        return $x * factorial($x - 1);
+    }
+}
+
+echo "Factorial 4 is ";
+echo factorial(4);
+
+echo "\r\n";
+echo "\r\n";
+echo "***\r\n";
+
+
+/*
+ * 25. Как вывести на экран ряд чисел Фибоначчи?
+ */
+
+function fibonacci($x)
+{
+
+    if ($x < 3) {
+        return 1;
+    } else {
+        return fibonacci($x - 1) + fibonacci($x - 2);
+    }
+}
+for ($i = 1; $i <= 16; $i++ ){
+    echo (fibonacci($i).", ");
+}
+echo (",,,\n");
+echo "\r\n";
+echo "***\r\n";
+
+
+/*
+ * 26. Сложение в PHP и JavaScript. ”123” + “abc”. Что будет? А если 123 + ”abc”?
+ * В JavaScript “+” это конкатенация, т.е. строки просто соединятся. В PHP в обоих случая результат
+ * будет 123. А если в PHP сложить, например, 10 + ”20”, то, несмотря на кавычки результат будет
+ * 30.
+ */
+
+
+/*
+ *27. Есть ли разница между одинарными и двойными кавычками в PHP?
+ * В двойных кавычках данные “парсятся”, а в одинарных – нет.
+ *  Двойные кавычки в данном случае
+ * приведут к результату Chimay, а одинарные к $beer
+ */
+
+$beer = 'Chimay';
+echo "$beer";
+echo "\r\n";
+echo "\r\n";
+echo "***\r\n";
+
 ?>
 
