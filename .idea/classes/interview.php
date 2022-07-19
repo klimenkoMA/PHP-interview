@@ -1,5 +1,8 @@
+<meta charset="utf-8">
 <?php
-
+error_reporting(E_ALL);
+ini_set('display_errors', 'on');
+mb_internal_encoding('UTF-8');
 /*
  * 1.Отличие сортировок sort(), asort(), ksort()
 */
@@ -402,10 +405,11 @@ function fibonacci($x)
         return fibonacci($x - 1) + fibonacci($x - 2);
     }
 }
-for ($i = 1; $i <= 16; $i++ ){
-    echo (fibonacci($i).", ");
+
+for ($i = 1; $i <= 16; $i++) {
+    echo(fibonacci($i) . ", ");
 }
-echo (",,,\n");
+echo(",,,\n");
 echo "\r\n";
 echo "***\r\n";
 
@@ -430,6 +434,69 @@ echo "$beer";
 echo "\r\n";
 echo "\r\n";
 echo "***\r\n";
+
+
+/*
+ * 28. Проход массива. Как вывести все элементы массива на экран?
+ * Вывести с ключами: print_r.
+ */
+
+$cars = array("BMV", "Audi", "Mersedes", "Porshe");
+
+foreach ($cars as $car) {
+    echo $car . "<br/>";
+}
+echo "\r\n";
+echo "\r\n";
+echo "***\r\n";
+
+
+/*
+ * 29. В чём разница между функциями count() и sizeof()?
+ * Функция count() выполняет ту же операцию, что и sizeof() – возвращает количество значений,
+ * содержащихся в массиве. Единственное различие между ними заключается в том, что
+ * в некоторых ситуациях count() возвращает дополнительную информацию:
+ */
+
+
+/*
+ * 30. Что такое ассоциативный массив?
+ * Массивы, индексами которых являются строки, называются ассоциативными.
+ *  Индексы ассоциативных массивов называются ключами.
+ */
+$people["Cannaby"] = 'Iten';
+$people["Pretty"] = 'Good';
+$people["Shame"] = "Samanta";
+print_r($people);
+echo "***\r\n";
+foreach ($people as $person) {
+    echo $person . " ";
+}
+echo "\r\n";
+echo "\r\n";
+echo "***\r\n";
+
+/*
+ * 31. Нарисуй форму для отправки файла:
+ * Для реализации возможности загрузки файлов на сервер можно
+ * использовать простую форму:
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+ <meta charset="UTF-8">
+ <title> Uploading File</title>
+ </head>
+ <body>
+<form action= action.php method= post enctype= multipart/form-data>
+<input type=file name=uploadfile>
+<input type=submit name=Загрузить>
+</form>
+</body>
+</html>
+*/
+
+
 
 ?>
 
