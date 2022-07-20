@@ -494,7 +494,63 @@ echo "***\r\n";
 </form>
 </body>
 </html>
-*/
+ * Этот код выводит в браузер элемент input с кнопкой «Обзор» и кнопку «Загрузить». По нажатию
+ * на эту кнопку происходит обращение к файлу upload.php, который содержит следующий код:
+ *
+ * $uploadfile = './upload/' . basename($_FILES['uploadfile']['name']);
+ * //Копируем файл из каталога во временное хранилище
+ * if (copy($_FILES['uploadfile']['tmp name'], $uploadfile)) {
+ *     echo "<h3>The file was successfully uploaded on the server</h3>";
+ * } else {
+ *     echo "<h3>Mistake! The file could not be uploaded to the server!</h3>";
+ *     exit;
+ * }
+ */
+
+
+/*
+ * 32. Пусть имеем HTML-форму, которая содержит одно поле ввода text и одно
+ * поле ввода textarea. Требуется создать для данной HTML-формы скрипт-обработчик
+ * script1.php, который заносит построчно в файл data.txt данные. В
+ * итоге структура получаемого файла data.txt должна быть следующая:
+ * text1
+ * text2
+ * text3
+ * text4
+ * где столбцы text1 и text3 относятся к полю text, а text2 и text4 к полю textarea.
+ * После того, как обработчик script1.php поместит данные в файл, он должен
+ * возвратить пользователя обратно в index.html.
+ *
+ * Form
+ * <!DOCTYPE html>
+ * <html lang="en">
+ * <title>Go</title>
+ * <body>
+ * <form action="action.php" method = "post">
+ * Введите имя: <input type="text" name="name" />
+ * Сообщение: <input type="text" name="message" />
+ * <input type="submit" value="Ввести" />
+ *
+ * </form>
+ * </body>
+ * </html>
+ *
+ * Файл обработки
+ *
+ * <?php
+ * $all = "Name: " . $_POST['name']."\r\n" . Message: ".$_POST['message']."\r\n";
+ * $files = "bamb.txt";
+ * if ($handle = fopen($files, 'a')){
+ * echo "Can`t open the file ($filename)";
+ * exit;
+ * }
+ *
+ * if (fwrite($handle, $all) === FALSE){
+ * echo "Can`t write to this file ($files)";
+ * exit;
+ * }
+ * ?>
+ */
 
 
 
