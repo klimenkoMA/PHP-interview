@@ -6,6 +6,6 @@ mb_internal_encoding('UTF-8');
 
 echo "Моя первая страница";
 
-include 'code.php';
-
+//include 'code.php';
+phpinfo();
 ?>
