@@ -146,8 +146,8 @@ echo '<br>' . '</br>';
  * 1, 2 и 3 и значениями 'a', 'b' и 'c'. Выведите на экран все его элементы.
  */
 $arr = array(1 => 'a', 2 => 'b', 3 => 'c');
-foreach ($arr as $a){
-    echo '<br>' .$a. '</br>';
+foreach ($arr as $a) {
+    echo '<br>' . $a . '</br>';
 }
 
 
