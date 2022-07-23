@@ -149,7 +149,26 @@ $arr = array(1 => 'a', 2 => 'b', 3 => 'c');
 foreach ($arr as $a) {
     echo '<br>' . $a . '</br>';
 }
+echo '<br>' . "***" . '</br>';
 
+
+/*
+ * Выведите на экран количество элементов в этом массиве.
+ */
+
+$arr = array('a', 'b', 'c', 'd', 'e');
+echo count($arr);
+echo '<br>' . "***" . '</br>';
+
+
+$test = "";
+
+if (isset($test)){
+    echo "+";
+}else{
+    echo "-";
+}
+echo '<br>' . "***" . '</br>';
 
 
 ?>
