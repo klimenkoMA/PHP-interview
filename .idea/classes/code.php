@@ -186,5 +186,22 @@ if ($a % 3 === 0){
 echo '<br>' . "***" . '</br>';
 
 
+/*
+ * В переменной $month лежит какое-то число из интервала от 1 до 12.
+ * Определите в какую пору года попадает этот месяц (зима, лето, весна, осень).
+ */
+
+$month = random_int(1,12);
+
+if ($month <= 2 || $month === 12){
+    echo "Winter";
+}elseif ($month > 2 && $month <=5){
+    echo "Spring";
+}elseif ($month > 5 && $month <= 8){
+    echo "Summer";
+}else{
+    echo "Autumn";
+}
+echo '<br>' . "***" . '</br>';
 
 ?>
