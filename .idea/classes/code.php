@@ -163,9 +163,9 @@ echo '<br>' . "***" . '</br>';
 
 $test = "";
 
-if (isset($test)){
+if (isset($test)) {
     echo "+";
-}else{
+} else {
     echo "-";
 }
 echo '<br>' . "***" . '</br>';
@@ -177,10 +177,10 @@ echo '<br>' . "***" . '</br>';
 
 $a = 157962;
 
-if ($a % 3 === 0){
-    echo $a. " divided by 3!";
-}else{
-    echo $a. " NOT divided by 3!";
+if ($a % 3 === 0) {
+    echo $a . " divided by 3!";
+} else {
+    echo $a . " NOT divided by 3!";
 }
 
 echo '<br>' . "***" . '</br>';
@@ -191,17 +191,235 @@ echo '<br>' . "***" . '</br>';
  * Определите в какую пору года попадает этот месяц (зима, лето, весна, осень).
  */
 
-$month = random_int(1,12);
+$month = random_int(1, 12);
 
-if ($month <= 2 || $month === 12){
+if ($month <= 2 || $month === 12) {
     echo "Winter";
-}elseif ($month > 2 && $month <=5){
+} elseif ($month > 2 && $month <= 5) {
     echo "Spring";
-}elseif ($month > 5 && $month <= 8){
+} elseif ($month > 5 && $month <= 8) {
     echo "Summer";
-}else{
+} else {
     echo "Autumn";
 }
 echo '<br>' . "***" . '</br>';
 
+/*
+ * Переменная $num может принимать значения 1, 2, 3 или 4. Определите,
+ *  в какую пору года попадает значение этой переменной.
+ */
+
+$num = random_int(1, 4);
+
+switch ($num) {
+    case 1:
+        echo "Winter";
+        break;
+    case 2:
+        echo "Spring";
+        break;
+    case 3:
+        echo "Summer";
+        break;
+    default:
+        echo "Autumn";
+        break;
+}
+echo '<br>' . "***" . '</br>';
+
+/*
+ * Пусть дана переменная $num, которая может быть либо отрицательной, либо положительной.
+ * Запишите в переменную $result число 1, если переменная $num больше или равна нулю,
+ * и число -1, если переменная $num меньше нуля.
+ */
+
+$num = random_int(-1, 0);
+
+$result = $num < 0 ? 1 : 0;
+echo $result;
+echo '<br>' . "***" . '</br>';
+
+
+/*
+ * Перепишите следующий код через изученный оператор:
+ * <?php
+ * 	$user = ['name' => 'john', 'age' => 30];
+ *	if (isset($user['name'])) {
+ * 		$name = $user['name'];
+ * 	} else {
+ * 		$name = 'unknown';
+ * 	}?>
+ */
+
+$user = ['name' => 'john', 'age' => 30];
+$name = $user['name'] ?? 'empty';
+
+echo $name;
+echo '<br>' . "***" . '</br>';
+
+/*
+ * Перепишите следующий код через изученный оператор:
+
+<?php
+	if (isset($user['name'])) {
+		$result = $user['name'];
+	} elseif (isset($user['surname'])) {
+		$result = $user['surname'];
+	} else {
+		$result = '';
+	}
+?>
+ */
+
+$name = $user['name'] ?? $user['surname'] ?? '';
+echo $name;
+echo '<br>' . "***" . '</br>';
+
+
+/*
+ * Дан массив:
+
+<?php
+	$arr = ['green' => 'зеленый', 'red' => 'красный','blue' => 'голубой'];
+?>
+С помощью цикла foreach выведите на экран столбец ключей и элементов в формате green - зеленый
+ */
+
+
+$arr = ['green' => 'зеленый', 'red' => 'красный', 'blue' => 'голубой'];
+foreach ($arr as $ar => $elem) {
+    echo $ar . " - " . $elem . ", ";
+}
+echo '<br>' . "***" . '</br>';
+
+
+/*
+ * <?php
+	$arr = ['a', 'b', 'c', 'd', 'e'];
+?>
+Проверьте, что в этом массиве есть элемент 'c'. Если есть - выведите 'да',
+ а если нет - выведите 'нет'.
+ */
+
+$arr = ['a', 'b', 'c', 'd', 'e'];
+$flag = false;
+
+foreach ($arr as $item) {
+    if ($item === 'c') {
+        $flag = true;
+    }
+}
+
+if ($flag) {
+    echo "YES";
+} else {
+    echo "NO";
+}
+echo '<br>' . "***" . '</br>';
+
+/*
+ * Фибоначи мне запили!
+ */
+$hlp = 0;
+$one = 1;
+for ($i = 1; $i < 10; $i++) {
+    $res = $hlp + $one;
+    $hlp = $one;
+    $one = $res;
+    echo $res . " ";
+}
+echo '<br>' . "***" . '</br>';
+
+/*
+ * Выведите на экран следующую пирамидку:
+
+1
+333
+55555
+7777777
+999999999
+ */
+
+for ($i = 1; $i < 10; $i++) {
+    if ($i % 2 !== 0) {
+        for ($j = 1; $j <= $i; $j++) {
+            echo $i;
+        }
+        echo '</br>';
+    }
+}
+echo "***" . '</br>';
+
+/*
+ *Дан следующий массив:
+
+<?php
+	$arr = [
+		[
+			[1, 2, 3],
+			[6, 7, 8],
+			[3, 8, 4],
+			[6, 7, 9],
+		],
+		[
+			[9, 1, 2],
+			[4, 5, 6],
+		],
+		[
+			[9, 1, 2],
+			[4, 5, 6],
+			[5, 6, 3],
+		],
+	];
+?>
+С помощью трех вложенных циклов найдите сумму элементов этого массива.
+ */
+$arr = [
+    [
+        [1, 2, 3],
+        [6, 7, 8],
+        [3, 8, 4],
+        [6, 7, 9],
+    ],
+    [
+        [9, 1, 2],
+        [4, 5, 6],
+    ],
+    [
+        [9, 1, 2],
+        [4, 5, 6],
+        [5, 6, 3],
+    ],
+];
+$res = 0;
+foreach ($arr as $item) {
+    foreach ($item as $ite) {
+        foreach ($ite as $it) {
+            $res += $it;
+        }
+    }
+}
+echo $res;
+echo '<br>' . "***" . '</br>';
+
+
+/*
+ * Сформируйте с помощью двух вложенных циклов следующий массив:
+
+[[1, 2, 3, 4, 5], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5]]
+ */
+$arr= array(array());
+for ($i = 1; $i < 6; $i++) {
+    for ($j = 1; $j < 6; $j++){
+        $arr[$i][$j] = $j;
+    }
+}
+
+foreach ($arr as $item) {
+    foreach ($item as $ite) {
+       echo $ite . " ";
+    }
+    echo "</br>";
+}
+echo '<br>' . "***" . '</br>';
 ?>
