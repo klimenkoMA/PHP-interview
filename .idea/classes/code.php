@@ -588,4 +588,15 @@ echo '<br>' . "***" . '</br>';
 $str = '12345';
 echo strrev($str);
 echo '<br>' . "***" . '</br>';
+
+/*
+ * Дана строка. Перемешайте символы этой строки в случайном порядке.
+ */
+
+$str = 'some letters in this string';
+
+echo str_shuffle($str);
+echo '<br>' . "***" . '</br>';
+
+
 ?>
