@@ -598,5 +598,28 @@ $str = 'some letters in this string';
 echo str_shuffle($str);
 echo '<br>' . "***" . '</br>';
 
+/*
+ * Дан массив:
 
+<?php
+	$arr = [1, 2, 3, 4, 5];
+?>
+Проверьте, что в нем есть элемент со значением 3.
+ */
+$arr = [1, 2, 3, 4, 5];
+$res = in_array(3, $arr);
+echo $res.'</br>';
+var_dump($res);
+echo '<br>' . "***" . '</br>';
+
+
+/*
+ * Создайте массив, заполненный буквами от 'a' до 'z'.
+ */
+
+$arr = range('a', 'z');
+foreach ($arr as $item) {
+    echo $item . " ";
+}
+echo '<br>' . "***" . '</br>';
 ?>
