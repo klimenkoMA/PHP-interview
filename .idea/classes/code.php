@@ -659,4 +659,43 @@ foreach ($arr as $re) {
     echo $re . ", ";
 }
 echo '<br>' . "***" . '</br>';
+
+/*
+ * Дан массив:
+
+<?php
+	$arr = ['a' => 1, 'b' => 2, 'c' => 3];
+?>
+Запишите в массив $keys ключи из этого массива, а в $values – значения.
+ */
+
+$arr = ['a' => 1, 'b' => 2, 'c' => 3];
+$keys = array_keys($arr);
+$values = array_values($arr);
+
+foreach ($keys as $key) {
+    echo $key . ", ";
+}
+echo 'KEYS.';
+echo '<br>' . '</br>';
+foreach ($values as $value) {
+    echo $value.', ';
+}
+echo 'VALUES.';
+echo '<br>' . "***" . '</br>';
+
+/*
+ * Дан массив:
+
+<?php
+	$arr = ['a', 'b', 'c', 'b', 'a'];
+?>
+Удалите из этого массива повторяющиеся элементы.
+ */
+$arr = ['a', 'b', 'c', 'b', 'a'];
+
+
+    var_dump(array_unique($arr));
+
+echo '<br>' . "***" . '</br>';
 ?>
