@@ -823,4 +823,42 @@ $result2 = sqr(4);
 
 echo $result1 + $result2;
 echo '<br>' . "***" . '</br>';
+
+/*
+ * Напишите функцию, которая параметром будет принимать число и делить его на 2 столько раз,
+ *  пока результат не станет меньше 10. Пусть функция возвращает количество итераций, которое
+ *  потребовалось для достижения результата.
+ */
+
+function mathFunction($num){
+    $res = $num;
+    $count = 0;
+    while ($res >= 10){
+        $res /= 2;
+        $count ++;
+    }
+    return $count;
+}
+$number = 25987;
+$res = mathFunction($number);
+
+echo "Need " . $res . " iterations for number " . $number;
+echo '<br>' . "***" . '</br>';
+
+/*
+ * Напишите функцию, которая будет находить сумму квадратных корней элементов массива.
+ */
+
+function arraySqr($arr){
+
+    $res = 0;
+
+    foreach ($arr as $item) {
+        $res += sqrt($item);
+    }
+    return $res;
+}
+ $arr = [1, 3, 56,  78, 90909, 5, 55];
+echo 'Sum of square roots of array $arr is ' . arraySqr($arr);
+echo '<br>' . "***" . '</br>';
 ?>
