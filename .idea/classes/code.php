@@ -608,7 +608,7 @@ echo '<br>' . "***" . '</br>';
  */
 $arr = [1, 2, 3, 4, 5];
 $res = in_array(3, $arr);
-echo $res.'</br>';
+echo $res . '</br>';
 var_dump($res);
 echo '<br>' . "***" . '</br>';
 
@@ -637,7 +637,7 @@ echo '<br>' . "***" . '</br>';
  */
 
 $arr = [1, 2, 3, 4, 5];
-$res = array_slice($arr, 1,3);
+$res = array_slice($arr, 1, 3);
 foreach ($res as $re) {
     echo $re . ", ";
 }
@@ -654,7 +654,7 @@ echo '<br>' . "***" . '</br>';
 ?>
  */
 
-$res = array_splice($arr, 1,2);
+$res = array_splice($arr, 1, 2);
 foreach ($arr as $re) {
     echo $re . ", ";
 }
@@ -679,7 +679,7 @@ foreach ($keys as $key) {
 echo 'KEYS.';
 echo '<br>' . '</br>';
 foreach ($values as $value) {
-    echo $value.', ';
+    echo $value . ', ';
 }
 echo 'VALUES.';
 echo '<br>' . "***" . '</br>';
@@ -695,7 +695,7 @@ echo '<br>' . "***" . '</br>';
 $arr = ['a', 'b', 'c', 'b', 'a'];
 
 
-    var_dump(array_unique($arr));
+var_dump(array_unique($arr));
 
 echo '<br>' . "***" . '</br>';
 
@@ -723,7 +723,7 @@ echo '<br>' . "***" . '</br>';
 Создайте новый массив, в котором будут лежать квадратные корни данных элементов.
  */
 $arr = [1, 2, 3, 4, 5];
-var_dump(array_map('sqrt',$arr));
+var_dump(array_map('sqrt', $arr));
 
 echo '<br>' . "***" . '</br>';
 
@@ -739,7 +739,7 @@ echo '<br>' . "***" . '</br>';
  * Скрипт должен работать независимо от года, в котором он запущен
  */
 
-echo mktime(0, 0, 0,12, 31, 2023);
+echo mktime(0, 0, 0, 12, 31, 2023);
 echo '<br>' . "***" . '</br>';
 
 /*
@@ -761,7 +761,7 @@ echo '<br>' . "***" . '</br>';
  * Дан массив с числами. Найдите среднее арифметическое его элементов.
  */
 $arr = [1, 2, 3, 4, 5];
-echo (array_sum($arr) / count($arr));
+echo(array_sum($arr) / count($arr));
 echo '<br>' . "***" . '</br>';
 
 /*
@@ -776,7 +776,8 @@ echo '<br>' . "***" . '</br>';
  * Сделайте функцию, выводящую на экран ваше имя.
  */
 
-function name(){
+function name()
+{
     echo 'Mikl';
 }
 
@@ -787,10 +788,12 @@ echo '<br>' . "***" . '</br>';
  * Сделайте функцию, которая параметром принимает число и выводит на экран куб этого числа.
  */
 
-function square($num){
+function square($num)
+{
 
     echo $num * $num * $num;
 }
+
 square(78);
 echo '<br>' . "***" . '</br>';
 
@@ -800,7 +803,8 @@ echo '<br>' . "***" . '</br>';
  * С помощью этой функции найдите куб числа 3 и запишите его в переменную $result.
  */
 
-function cubing($num){
+function cubing($num)
+{
     return $num * $num * $num;
 }
 
@@ -814,7 +818,8 @@ echo '<br>' . "***" . '</br>';
  * полученные результаты и выведите их на экран.
  */
 
-function sqr($num){
+function sqr($num)
+{
     return $num * $num;
 }
 
@@ -830,15 +835,17 @@ echo '<br>' . "***" . '</br>';
  *  потребовалось для достижения результата.
  */
 
-function mathFunction($num){
+function mathFunction($num)
+{
     $res = $num;
     $count = 0;
-    while ($res >= 10){
+    while ($res >= 10) {
         $res /= 2;
-        $count ++;
+        $count++;
     }
     return $count;
 }
+
 $number = 25987;
 $res = mathFunction($number);
 
@@ -849,7 +856,8 @@ echo '<br>' . "***" . '</br>';
  * Напишите функцию, которая будет находить сумму квадратных корней элементов массива.
  */
 
-function arraySqr($arr){
+function arraySqr($arr)
+{
 
     $res = 0;
 
@@ -858,7 +866,35 @@ function arraySqr($arr){
     }
     return $res;
 }
- $arr = [1, 3, 56,  78, 90909, 5, 55];
+
+$arr = [1, 3, 56, 78, 90909, 5, 55];
 echo 'Sum of square roots of array $arr is ' . arraySqr($arr);
 echo '<br>' . "***" . '</br>';
+
+/*
+ * Сделайте функцию, которая параметром будет принимать массив с числами,
+ *  и проверять, что все элементы в этом массиве являются четными числами.
+ */
+$arr1 = [2, 4, 56, 78, 90900, 6, 56];
+
+function evenFunc($arr)
+{
+
+    foreach ($arr as $item) {
+        if ($item % 2 !== 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+if (evenFunc($arr1)) {
+    $result = 'TRUE';
+} else {
+    $result = 'FALSE';
+}
+
+echo 'Do array $arr1 have not even elements? ' . $result;
+echo '<br>' . "***" . '</br>';
+
 ?>
