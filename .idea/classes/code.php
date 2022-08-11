@@ -897,4 +897,27 @@ if (evenFunc($arr1)) {
 echo 'Do array $arr1 have not even elements? ' . $result;
 echo '<br>' . "***" . '</br>';
 
+/*
+ * Дана функция, которая параметром принимает целое число и возвращает сумму его цифр:
+
+<?php
+	function getDigitsSum($num) {
+		return array_sum(str_split($num));
+	}
+?>
+С помощью приведенной функции найдите все года от 1 до 2030, сумма цифр которых равна 13.
+ */
+function getDigitsSum($num) {
+    return array_sum(str_split($num));
+}
+$res = [];
+for ($i = 1; $i < 2031; $i ++){
+
+    if (getDigitsSum($i) === 13){
+        $res[] = $i;
+    }
+}
+
+var_dump($res);
+echo '<br>' . "***" . '</br>';
 ?>
