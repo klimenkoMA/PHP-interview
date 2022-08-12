@@ -907,17 +907,44 @@ echo '<br>' . "***" . '</br>';
 ?>
 С помощью приведенной функции найдите все года от 1 до 2030, сумма цифр которых равна 13.
  */
-function getDigitsSum($num) {
+function getDigitsSum($num)
+{
     return array_sum(str_split($num));
 }
-$res = [];
-for ($i = 1; $i < 2031; $i ++){
 
-    if (getDigitsSum($i) === 13){
+$res = [];
+for ($i = 1; $i < 2031; $i++) {
+
+    if (getDigitsSum($i) === 13) {
         $res[] = $i;
     }
 }
 
 var_dump($res);
 echo '<br>' . "***" . '</br>';
+
+/*
+ * Дан массив:
+
+<?php
+	$arr = ['a' => 1, 'b' => 2, 'c' => 3, 'd' => 4, 'e' => 5];
+?>
+С помощью рекурсии выведите элементы этого массива на экран.
+ */
+$arr = ['a' => 1, 'b' => 2, 'c' => 3, 'd' => 4, 'e' => 5];
+
+function recurcive($arr)
+{
+    var_dump(array_shift($arr));
+
+    if (0 < count($arr)) {
+
+        recurcive($arr);
+    }
+
+}
+
+recurcive($arr);
+echo '<br>' . "***" . '</br>';
+
 ?>
