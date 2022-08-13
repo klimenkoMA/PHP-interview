@@ -947,4 +947,28 @@ function recurcive($arr)
 recurcive($arr);
 echo '<br>' . "***" . '</br>';
 
+/*
+ * Дан массив:
+
+<?php
+	$arr = ['a' => 1, 'b' => 2, 'c' => 3, 'd' => 4, 'e' => 5];
+?>
+С помощью рекурсии найдите сумму элементов этого массива.
+ */
+
+$arr = ['a' => 1, 'b' => 2, 'c' => 3, 'd' => 4, 'e' => 5];
+
+function recurs($arr)
+{
+
+    $summ = array_shift($arr);
+    if (0 < count($arr)) {
+        $summ += recurs($arr);
+    }
+    return $summ;
+
+}
+
+echo recurs($arr);
+echo '<br>' . "***" . '</br>';
 ?>
