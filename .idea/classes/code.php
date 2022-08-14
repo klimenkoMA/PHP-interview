@@ -971,4 +971,29 @@ function recurs($arr)
 
 echo recurs($arr);
 echo '<br>' . "***" . '</br>';
+
+/*
+ * Дан многомерный массив произвольного уровня вложенности, например, такой:
+
+<?php
+	$arr = [1, 2, 3, [4, 5, [6, 7]], [8, [9, 10]]];
+?>
+С помощью рекурсии выведите все примитивные элементы этого массива на экран.
+ */
+
+$arr = [1, 2, 3, [4, 5, [6, 7]], [8, [9, 10]]];
+
+function moreRecurs($arr){
+    foreach ($arr as $item) {
+
+        if (is_array($item)){
+            moreRecurs($item);
+        }else{
+            echo $item . " ";
+        }
+    }
+}
+
+moreRecurs($arr);
+echo '<br>' . "***" . '</br>';
 ?>
