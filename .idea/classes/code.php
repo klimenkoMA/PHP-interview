@@ -983,12 +983,13 @@ echo '<br>' . "***" . '</br>';
 
 $arr = [1, 2, 3, [4, 5, [6, 7]], [8, [9, 10]]];
 
-function moreRecurs($arr){
+function moreRecurs($arr)
+{
     foreach ($arr as $item) {
 
-        if (is_array($item)){
+        if (is_array($item)) {
             moreRecurs($item);
-        }else{
+        } else {
             echo $item . " ";
         }
     }
@@ -996,4 +997,77 @@ function moreRecurs($arr){
 
 moreRecurs($arr);
 echo '<br>' . "***" . '</br>';
+
+/*
+ * Сделайте функцию, которая будет принимать число, а возвращать это число прописью.
+ * Пусть функция работает с числами до 999. Смотрите пример:
+
+<?php
+	func(123); // выведет 'сто двадцать три'
+?>
+ */
+
+function num2String($num)
+{
+    if ($num === 0) {
+        return 'ноль';
+    }
+
+    $numMill = array('один', 'два', 'три', 'четыре', 'пять', 'шесть', 'семь', 'восемь', 'девять');
+    $numTh = array('одна', 'две', 'три', 'четыре', 'пять', 'шесть', 'семь', 'восемь', 'девять');
+    $numTeen = array('одиннадцать', 'двенадцать', 'тринадцать', 'четырнадцать', 'пятнадцать',
+        'шестнадцать', 'семнадцать', 'восемнадцать', 'девятнадцать');
+    $numTy = array('', 'двадцать', 'тридцать', 'сорок', 'пятьдесят', 'шестьдесят', 'семьдесят', 'восемьдесят', 'девяносто');
+    $numHund = array('сто', 'двести', 'триста', 'четыреста', 'пятьсот', 'шестьсот', 'семьсот', 'восемьсот', 'девятьсот');
+    $digitName = array(
+        $billions = array('миллиард', 'миллиарда', 'миллиардов'),
+        $millions = array('миллион', 'миллиона', 'миллионов'),
+        $thousands = array('тысяча', 'тысячи', 'тысяч'),
+    );
+
+    for ($i = 1000000000, $j = 0; $j <= 3; $j++, $i = $i / 1000) {
+
+        $digit = false;
+        $number = floor($num / $i);
+        if ($i === 1000) {
+            $digit = true;
+        }
+
+        $str = $numHund[floor($number / 100) - 1];
+        if ($number % 100 === 10) {
+            $str .= ' десять';
+        } elseif (($n = $number % 100) > 10 and $n < 20) {
+            $str .= ' ' . $numTeen[$n % 10 - 1];
+        }else{
+            $str .= ' ' . $numTy[$n/10 - 1];
+            if ($digit){
+                $str .= ' ' . $numTh[$number%10 - 1];
+            }else{
+                $str .= ' ' . $numMill[$number%10  - 1];
+            }
+        }
+        if ($number){
+            $n10 = $number%100;
+            $n1 = $number %10;
+
+            if ($n10 > 10 and $n10 < 20){
+                $secondStr = $digitName[$j][2];
+            }elseif ($n1 === 1){
+                $secondStr = $digitName[$j][0];
+            } elseif ($n1 > 1 and $n1 < 5){
+                $secondStr = $digitName[$j][1];
+            }else {
+                $secondStr = $digitName[$j][2];
+            }
+        }
+        $finalStr .= $str . ' ' . $secondStr . ' ';
+
+        $num = $num % $i;
+    }
+    return $finalStr;
+}
+
+echo num2String(123456789);
+echo '<br>' . "***" . '</br>';
+
 ?>
