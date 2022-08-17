@@ -1084,4 +1084,16 @@ $res = preg_replace('#a.b#', '^^', $str);
 
 echo $res;
 echo '<br>' . "***" . '</br>';
+
+/*
+ * <?php
+	$str = 'ahb acb aeb aeeb adcb axeb';
+?>
+Напишите регулярку, которая найдет строки 'abba', 'adca', 'abea' по шаблону: буква 'a', два любых символа, буква 'b'.
+ */
+$str = 'ahb acb aeb aeeb adcb axeb';
+$result = preg_replace('#a..b#', 'om', $str);
+
+echo $result;
+echo '<br>' . "***" . '</br>';
 ?>
