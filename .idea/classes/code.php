@@ -1096,4 +1096,17 @@ $result = preg_replace('#a..b#', 'om', $str);
 
 echo $result;
 echo '<br>' . "***" . '</br>';
+
+/*
+ * Дана строка:
+
+<?php
+	$str = 'aa aba abba abbba abca abea';
+?>
+Напишите регулярку, которая найдет строки по шаблону: буква 'a', буква 'b' один или более раз, буква 'a'.
+ */
+$str = 'aa aba abba abbba abca abea';
+$result = preg_replace('#ab+a#', 'om', $str);
+echo $result;
+echo '<br>' . "***" . '</br>';
 ?>
