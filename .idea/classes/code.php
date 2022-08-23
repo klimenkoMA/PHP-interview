@@ -1122,4 +1122,16 @@ $str = 'aa aba abba abbba abca abea';
 $result = preg_replace('#ab*a#', 'yeehaa', $str);
 echo $result;
 echo '<br>' . "***" . '</br>';
+
+/*
+ * <?php
+	$str = 'ab abab abab abababab abea';
+?>
+Напишите регулярку, которая найдет строки по шаблону: строка 'ab' повторяется 1 или более раз.
+ */
+
+$str = 'ab abab abab abababab abea';
+$result = preg_replace('#(ab)+#', 'bbBBbb', $str);
+echo $result;
+echo '<br>' . "***" . '</br>';
 ?>
