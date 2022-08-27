@@ -1134,4 +1134,17 @@ $str = 'ab abab abab abababab abea';
 $result = preg_replace('#(ab)+#', 'bbBBbb', $str);
 echo $result;
 echo '<br>' . "***" . '</br>';
+
+/*
+ * Дана строка:
+
+<?php
+	$str = 'aa aba abba abbba abbbba abbbbba';
+?>
+Напишите регулярку, которая найдет строки 'abba', 'abbba', 'abbbba' и только их.
+ */
+$str = 'aa aba abba abbba abbbba abbbbba';
+$result = preg_replace('#ab{2,4}a#', 'yo-ho-ho!', $str);
+echo $result;
+echo '<br>' . "***" . '</br>';
 ?>
