@@ -1147,4 +1147,17 @@ $str = 'aa aba abba abbba abbbba abbbbba';
 $result = preg_replace('#ab{2,4}a#', 'yo-ho-ho!', $str);
 echo $result;
 echo '<br>' . "***" . '</br>';
+
+/*
+ * Дана строка:
+
+<?php
+	$str = 'aba accca azzza wwwwa';
+?>
+Напишите регулярку, которая найдет все строки по краям которых стоят буквы 'a', и заменит каждую из них на '!'. Между буквами a может быть любой символ (кроме 'a').
+ */
+$str = 'aba accca azzza wwwwa';
+$r = preg_replace('#a.+?a#','!', $str);
+echo $r;
+echo '<br>' . "***" . '</br>';
 ?>
