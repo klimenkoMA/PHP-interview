@@ -1160,4 +1160,17 @@ $str = 'aba accca azzza wwwwa';
 $r = preg_replace('#a.+?a#','!', $str);
 echo $r;
 echo '<br>' . "***" . '</br>';
+
+ /*
+  * Дана строка:
+
+<?php
+	$str = 'a1a a2a a3a a4a a5a aba aca';
+?>
+Напишите регулярку, которая найдет строки, в которых по краям стоят буквы 'a', а между ними одна цифра.
+  */
+$str = 'a1a a2a a3a a4a a5a aba aca';
+$r = preg_replace('#a\d+a#', '!', $str);
+echo $r;
+echo '<br>' . "***" . '</br>';
 ?>
