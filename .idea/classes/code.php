@@ -1187,4 +1187,16 @@ $str = 'aa a1a a22a a333a a4444a a55555a aba aca';
 $r = preg_replace('#a\d*a#', '!', $str);
 echo $r;
 echo '<br>' . "***" . '</br>';
+
+/*
+ * <?php
+	$str = 'aba aea aca aza axa';
+?>
+Напишите регулярку, которая найдет по следующему шаблону: по краям стоят буквы 'a',
+а между ними - буква 'b', 'e' или 'x'.
+ */
+$str = 'aba aea aca aza axa';
+$r = preg_replace('#a[bex]a#', '!', $str);
+echo $r;
+echo '<br>' . "***" . '</br>';
 ?>
