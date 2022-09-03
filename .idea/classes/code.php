@@ -1199,4 +1199,13 @@ $str = 'aba aea aca aza axa';
 $r = preg_replace('#a[bex]a#', '!', $str);
 echo $r;
 echo '<br>' . "***" . '</br>';
+
+/*
+ * Напишите регулярку, которая найдет строки по шаблону: цифра '1', затем символ не 'e' и не 'x', цифра '2'.
+ */
+
+$str = '1o2 xbz x1z xCz';
+$r = preg_replace('#1[^ex]2#', '!', $str);
+echo $r;
+echo '<br>' . "***" . '</br>';
 ?>
