@@ -1231,4 +1231,15 @@ $str = 'ааа ббб ёёё ззз ййй ААА БББ ЁЁЁ ЗЗЗ ЙЙЙ';
 $r = preg_replace('#[аА-яЯёЁ]*#u', '!', $str);
 echo $r;
 echo '<br>' . "***" . '</br>';
+
+/*
+ * <?php
+	$str = 'aba aea aca aza axa a.a a+a a*a';
+?>
+Напишите регулярку, которая найдет строки 'a.a', 'a+a', 'a*a', не затронув остальных.
+ */
+$str = 'aba aea aca aza axa a.a a+a a*a';
+$r = preg_replace('#a[.+*]a#','!',$str);
+echo $r;
+echo '<br>' . "***" . '</br>';
 ?>
