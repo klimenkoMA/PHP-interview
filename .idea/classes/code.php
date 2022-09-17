@@ -1253,4 +1253,13 @@ $str = 'xaz x.z x3z x@z x$z xrz';
 $r = preg_replace('#x[^.@$]z#', '!', $str);
 echo $r;
 echo '<br>' . "***" . '</br>';
+
+/*
+ * Напишите регулярку, которая найдет строки по шаблону: цифра или точка от 1 и более раз.
+ */
+
+$str = 'xaz x.z 9787 x3z x@z x$z xrz 1ret .50ee';
+$r = preg_replace('#[\d.]+#','!',$str);
+echo $r;
+echo '<br>' . "***" . '</br>';
 ?>
