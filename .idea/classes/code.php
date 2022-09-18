@@ -1262,4 +1262,13 @@ $str = 'xaz x.z 9787 x3z x@z x$z xrz 1ret .50ee';
 $r = preg_replace('#[\d.]+#','!',$str);
 echo $r;
 echo '<br>' . "***" . '</br>';
+
+/*
+ * Напишите регулярку, которая найдет строки по шаблону: не цифра и не буква от 'a' до 'g' от 3 до 7 раз.
+ */
+
+$str = 'xaz x.z 9787 x3z x@z x$z xrz 1ret .50ee /*-~% ?\|//**++-';
+$r = preg_replace('#[^\da-gA-G]{3,7}#u', ' ! ', $str);
+echo $r;
+echo '<br>' . "***" . '</br>';
 ?>
