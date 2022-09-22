@@ -1293,4 +1293,17 @@ $str = '^xx axx ^zz bkk @ss';
 $r = preg_replace('#[\^@]\w{2}#','!', $str);
 echo $r;
 echo '<br>' . "***" . '</br>';
+
+/*
+ * <?php
+	$str = '^xx axx ^zz bkk @ss';
+?>
+Напишите регулярку, которая найдет строки по шаблону: НЕ шляпка и не собака, а затем две латинских буквы.
+ */
+$str = '^xx axx ^zz bkk @ss';
+$r = preg_replace('#[^\^\@][a-zA-Z][a-zA-Z]#',' ! ',$str);
+echo $r;
+echo '<br>' . "***" . '</br>';
+
+
 ?>
